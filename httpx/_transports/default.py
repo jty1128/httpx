@@ -23,6 +23,7 @@ client = httpx.Client(transport=transport)
 transport = httpx.HTTPTransport(uds="socket.uds")
 client = httpx.Client(transport=transport)
 """
+
 import contextlib
 import ssl
 import typing
@@ -120,6 +121,8 @@ class ResponseStream(SyncByteStream):
 class HTTPTransport(BaseTransport):
     def __init__(
         self,
+        verify: VerifyTypes = True,
+        cert: CertTypes = None,
         ssl_context: typing.Optional[ssl.SSLContext] = None,
         http1: bool = True,
         http2: bool = False,
