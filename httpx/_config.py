@@ -136,7 +136,7 @@ class SSLContext(ssl.SSLContext):
                 )
 
     def __repr__(self) -> str:
-        return f"<SSLContext [verify={self.verify}]>"
+        return f"<SSLContext [verify={self.verify}]>"  # pragma: no cover
 
     def __new__(
         cls,
